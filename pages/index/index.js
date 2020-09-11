@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const Net = require('../../net/net.js')
 
 Page({
   data: {
@@ -16,6 +17,12 @@ Page({
     })
   },
   onLoad: function () {
+
+    Net.GetHome().then(res=>{
+      
+    })
+
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
