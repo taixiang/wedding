@@ -1,2 +1,31 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="container" style="height:100%">
+	<swiper class="h_s" style="height:100%" circular='true' interval='4000' autoplay='true' vertical='false' bindchange="bannerChange">
+		<block wx:for="{{imgList}}" wx:key='*this'>
+			<swiper-item>
+				<view class="img">
+					<image class="img" src="{{item}}" />
+					<view class='datetime' animation="{{animationData}}" wx:if='{{index == 0}}'>
+						<view class='box'>
+							<view class="name css13610f7ae66601">
+								<span >{{mainInfo.he}}</span>
+								<span class="and">❤️</span>
+								<span >{{mainInfo.she}}</span>
+							</view>
+							<view class="date css13610f7ae66601">
+								<view>谨定于 {{mainInfo.date}}</view>
+								<view>农历 {{mainInfo.lunar}} 举办婚礼</view>
+								<view>地址: {{mainInfo.address}}</view>
+								<view>恭请您的光临</view>
+							</view>
+							<image class="we" src='/img/we.png'></image>
+						</view>
+					</view>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+
+
+
+</view>

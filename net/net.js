@@ -1,5 +1,7 @@
 
-const BaseUrl = "http://192.168.0.102:8080/";
+const BaseUrl = "http://192.168.0.105:8080/";
+
+// const BaseUrl = "https://www.manjiexiang.cn/";
 
 
 const request = (url, method, token, data) => {
