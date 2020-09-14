@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: {},
+    openId: "",
+    latitude: 32.540943,
+    longitude: 120.258987
   }
 })

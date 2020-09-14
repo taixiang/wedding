@@ -1,11 +1,49 @@
 // pages/location/location.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    latitude: app.globalData.latitude,
+    longitude: app.globalData.longitude,
+    markers: [{
+      id: 1,
+      latitude: app.globalData.latitude,
+      longitude: app.globalData.longitude,
+      callout: {
+        'content':'世外桃源',
+        'display': 'ALWAYS',
+        'padding': '5'
+      },
+      iconPath: "/img/location.png",
+      width: 50,
+      height: 50
 
+    }],
+  },
+
+  callhe: function(event) {
+    wx.makePhoneCall({
+      phoneNumber: '15021206840'
+    })
+  },
+  callshe: function(event) {
+    wx.makePhoneCall({
+      phoneNumber: ''
+    })
+  },
+
+  markertap(){
+    let latitude = app.globalData.latitude
+    let longitude =  app.globalData.longitude
+    wx.openLocation({
+      latitude,
+      longitude,
+      scale: 16
+    })
   },
 
   /**
