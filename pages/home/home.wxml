@@ -4,7 +4,7 @@
 		<block wx:for="{{imgList}}" wx:key='*this'>
 			<swiper-item>
 				<view class="img">
-					<image class="img" src="{{item}}" />
+					<image class="img" src="{{item}}" mode="widthFix" />
 					<view class='datetime' animation="{{animationData}}" wx:if='{{index == 0}}'>
 						<view class='box'>
 							<view class="name css13610f7ae66601">
