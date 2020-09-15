@@ -14,7 +14,7 @@ Page({
       latitude: app.globalData.latitude,
       longitude: app.globalData.longitude,
       callout: {
-        'content':'世外桃源',
+        'content':'我的老家就住在这个屯',
         'display': 'ALWAYS',
         'padding': '5'
       },

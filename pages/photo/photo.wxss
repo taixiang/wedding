@@ -1,1 +1,46 @@
 /* pages/photo/photo.wxss */
+  /* background:rgb(252, 170, 188); */
+
+.c{
+  height: 100%;
+  background:rgb(252, 170, 188);
+}
+
+.t-top{
+  font-size: 65rpx;
+  font-family: cursive;
+  color: #fff;
+}
+
+.xin{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.line-q1,.line-q2{
+  height: 4rpx;
+  border-radius: 2rpx;
+  background-color: #fff;
+}
+
+.line-q1{
+  margin-left: 50rpx;
+}
+.line-q2{
+  margin-right: 50rpx;
+}
+
+.img-v{
+  border-radius: 40rpx;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 20rpx 40rpx;
+}
+.img{
+  width: 100%;
+  height: 300rpx;
+}
+
+@import '../../utils/ripples.wxss';

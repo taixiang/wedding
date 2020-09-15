@@ -76,6 +76,21 @@
 					"id": -1,
 					"name": "pages/bless/bless",
 					"pathName": "pages/bless/bless",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/photo/photo",
+					"pathName": "pages/photo/photo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/photoDetail/photoDetail",
+					"pathName": "pages/photoDetail/photoDetail",
+					"query": "id=2",
 					"scene": null
 				}
 			]

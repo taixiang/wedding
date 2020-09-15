@@ -6,7 +6,8 @@
     "pages/photo/photo",
     "pages/location/location",
     "pages/bless/bless",
-    "pages/map"
+    "pages/map",
+    "pages/photoDetail/photoDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -14,6 +14,21 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+//px->rpx转换
+const pxToRpx = px => {
+  var screenWidth = wx.getSystemInfoSync().screenWidth;
+  return 750 * px /screenWidth
+}
+
+//rpx->px转换
+const rpxTopx = rpx => {
+  var screenWidth = wx.getSystemInfoSync().screenWidth;
+  return screenWidth * rpx / 750
+}
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  pxToRpx: pxToRpx,
+  rpxTopx: rpxTopx
 }

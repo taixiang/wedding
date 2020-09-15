@@ -1,7 +1,7 @@
 
-// const BaseUrl = "http://192.168.0.105:8080/";
+const BaseUrl = "http://192.168.0.102:8000/";
 
-const BaseUrl = "https://www.manjiexiang.cn/";
+// const BaseUrl = "https://www.manjiexiang.cn/";
 
 
 const request = (url, method, token, data) => {
@@ -58,4 +58,10 @@ module.exports = {
   GetHome: () => {
     return request('blog/wswiper', 'get', false)
   },
+  TypeList: () => {
+    return request('blog/typeList', 'get', false)
+  },
+  GetImg: (id) => {
+    return request('blog/getImg?id=' + id, 'get', false)
+  }
 }

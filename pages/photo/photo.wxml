@@ -1,2 +1,20 @@
 <!--pages/photo/photo.wxml-->
-<text>pages/photo/photo.wxml</text>
+<view class="container c">
+  <view class="flex-column bottom-10 ripple {{swing}}" style="margin-top:{{menuTop}}rpx">
+    <text class="t-top flex-as">小确幸</text>
+    <view class="flex-row flex-ai top-5">
+      <view class="line-q1 flex-1"/>
+      <image class="xin" src="/img/xin.png"/>
+      <view class="line-q2 flex-1"/>
+    </view>
+  </view>
+  <block wx:for='{{typeList}}' wx:key='id'>
+    <view class="img-v flex-column ripple {{item.anim}}" bindtap="toDetail" data-id="{{item.id}}">
+      <image class="img" src="{{item.img}}" mode="aspectFill" />
+      <view class="flex-row flex-ai flex-jc top-5 bottom-5" wx:if='{{item.desc}}'>
+        <text>{{item.desc}}</text>
+      </view>
+    </view>
+  </block>
+
+</view>
