@@ -1,7 +1,7 @@
 <!--pages/photoDetail/photoDetail.wxml-->
 <view class="container" style="height:100%">
 
-	<swiper class="h_s" style="height:100%" circular='true' interval='4000' autoplay='true' vertical='false' bindchange="bannerChange">
+	<swiper class="h_s" style="height:100%" circular='true' interval='2000' autoplay='true' vertical='false' bindchange="bannerChange">
 		<block wx:for="{{imgList}}" wx:key='*this'>
 			<swiper-item>
 				<view class="img">

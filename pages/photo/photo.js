@@ -55,7 +55,8 @@ Page({
         console.log({data})
         this.tmpData = data
         this.setData({
-          typeList: data
+          typeList: data,
+          swing: 'swing'
         })
       }
     })
