@@ -63,5 +63,14 @@ module.exports = {
   },
   GetImg: (id) => {
     return request('blog/getImg?id=' + id, 'get', false)
+  },
+  GetOpenId: (code) => {
+    return request('blog/getOpenId?code=' + code, 'get', false)
+  },
+  PostInfo: (param) => {
+    return request('blog/postUserInfo', 'post', false, param)
+  },
+  GetInfo: (id) => {
+    return request('blog/getUserInfo?openId=' + id, 'get', false)
   }
 }

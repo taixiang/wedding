@@ -1,17 +1,19 @@
 //app.js
+const Net = require('net/net.js')
+const util = require('utils/util.js')
+
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
+
+    let openId = wx.getStorageSync('openId') || ""
+    console.log({openId})
+    if(!openId){
+      //没有openid就没有授权
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+      this.wxLogin()
+    }
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -21,14 +23,12 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+              console.log({res})
             }
           })
+        }else{
+          console.log('-------------')
+          this.getInfo(openId)
         }
       }
     })
@@ -38,5 +38,33 @@ App({
     openId: "",
     latitude: 32.540943,
     longitude: 120.258987
+  },
+
+
+  //微信登录，换取code
+  wxLogin() {
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        Net.GetOpenId(res.code).then((res) => {
+          if (res && res.code == 200) {
+            this.globalData.openId = res.data.openid
+            wx.setStorageSync("openId", res.data.openid);
+
+          }
+        })
+      }
+    })
+  },
+
+  //获取信息
+  getInfo(id){
+    Net.GetInfo(id).then(res => {
+      if(res && res.data){
+        this.globalData.userInfo = res.data
+      }
+
+    })
   }
+
 })

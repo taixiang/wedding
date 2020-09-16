@@ -1,4 +1,74 @@
 <!--pages/bless/bless.wxml-->
 <view class="container">
+
+  <view hidden='{{isCard}}'>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    我要出席
+    </button>
+    <!-- <button bindtap="showCard" wx:else>
+    我要出席
+    </button> -->
   
+  </view>
+
+	<view class="send_msg" hidden='{{!isCard}}'>
+    <scroll-view scroll-y>
+      		<image src='/img/grren-flower-line.png' class='sign_top' mode="aspectFit"></image>
+		<form bindsubmit="formSubmit">
+			<view class='form-label'>
+				<view class='form-tit'>
+					<text class="must">*</text> 姓名</view>
+				<view class="form-ipt">
+					<input type="text" name="name" class='ipt' placeholder="怎么称呼您呢？" />
+				</view>
+			</view>
+			<view class='form-label'>
+				<view class='form-tit'>
+					<text class="must">*</text> 电话</view>
+				<view class="form-ipt">
+					<input type="number" name="tel" class='ipt' placeholder="请填写有效的手机号码" />
+				</view>
+			</view>
+			<view class='form-label'>
+				<view class='form-tit'>几人出席</view>
+				<view class="form-ipt">
+					<radio-group class="radio-group" name="plan">
+						<label class="radio">
+							<radio class='ws-checkbox' value="自己一人" checked="checked" />自己一人
+						</label>
+						<label class="radio">
+							<radio class='ws-checkbox' value="两人出席" checked="" />两人出席
+						</label>
+						<label class="radio">
+							<radio class='ws-checkbox' value="三人出席" checked="" />三人出席
+						</label>
+						<label class="radio">
+							<radio class='ws-checkbox' value="四人出席" checked="" />四人出席
+						</label>
+						<label class="radio">
+							<radio class='ws-checkbox' value="五人出席" checked="" />五人出席
+						</label>
+						<label class="radio">
+							<radio class='ws-checkbox' value="六人出席" checked="" />六人出席
+						</label>
+					</radio-group>
+				</view>
+			</view>
+			<view class='form-label'>
+				<view class='form-tit'>备注</view>
+				<view class="form-ipt">
+					<textarea class='textarea' name="extra" placeholder="请填写您的备注需求" fixed="true" />
+					</view>
+      </view>
+
+      <view class="flex-row flex-ai">
+        <view class='cancel_msg' bindtap='cancelMsg'>取消</view>      
+        <button type="primary" class="send_btn" form-type="submit" wx:if="{{auth}}">确定提交</button>
+        <button type="primary" class="send_btn" wx:else open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">确定提交</button>
+      </view>
+
+    </form>    
+    </scroll-view>
+
+  </view>
 </view>

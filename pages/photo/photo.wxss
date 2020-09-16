@@ -2,7 +2,6 @@
   /* background:rgb(252, 170, 188); */
 
 .c{
-  height: 100%;
   background:rgb(252, 170, 188);
 }
 
