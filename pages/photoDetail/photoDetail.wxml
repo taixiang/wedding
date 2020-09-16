@@ -5,7 +5,7 @@
 		<block wx:for="{{imgList}}" wx:key='*this'>
 			<swiper-item>
 				<view class="img">
-					<image class="img ripple {{curIndex == index ? anim : ''}}" src="{{anim ? item.img : ''}}"  />
+					<image class="img  {{curIndex == index ? 'ripple ' + anim : ''}}" src="{{item.img}}" mode="aspectFill"  />
 				</view>
 			</swiper-item>
 		</block>

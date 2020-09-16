@@ -10,18 +10,7 @@ Page({
    */
   data: {
     imgList: [
-      {
-        img: "https://happymall-1253765789.picsh.myqcloud.com/20200424/1587704672272.jpg?imageView2/3/w/400/h/400/q/100",
-        desc: 'bounce'
-      },
-      {
-        img: "https://happymall-1253765789.picsh.myqcloud.com/20200424/1587704672272.jpg?imageView2/3/w/400/h/400/q/100",
-        desc: 'pulse'
-      },
-      {
-        img: "https://happymall-1253765789.picsh.myqcloud.com/20200424/1587704672272.jpg?imageView2/3/w/400/h/400/q/100",
-        desc: 'rubberBand'
-      }],
+],
     anim: '',
     curIndex: 0,
   },
@@ -47,8 +36,9 @@ Page({
         let data = res.data || []
         this.tmpData = data
         this.setData({
+          imgList:data,
           curIndex: 0,
-          anim: this.data.imgList[0].desc
+          anim: data[0].desc
         })
       }
     })

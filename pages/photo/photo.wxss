@@ -2,7 +2,7 @@
   /* background:rgb(252, 170, 188); */
 
 .c{
-  background:rgb(252, 170, 188);
+  background:#fcaabc;
 }
 
 .t-top{
