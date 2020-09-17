@@ -72,5 +72,11 @@ module.exports = {
   },
   GetInfo: (id) => {
     return request('blog/getUserInfo?openId=' + id, 'get', false)
+  },
+  PostJoin: (param) => {
+    return request('blog/postJoinMsg', 'post', false, param)
+  },
+  GetJoinMsg: (id) => {
+    return request('blog/getJoinMsg?openId=' + id, 'get', false)
   }
 }

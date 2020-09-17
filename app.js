@@ -8,6 +8,7 @@ App({
 
     let openId = wx.getStorageSync('openId') || ""
     console.log({openId})
+    this.globalData.openId = openId
     if(!openId){
       //没有openid就没有授权
     // 登录

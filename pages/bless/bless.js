@@ -11,6 +11,7 @@ Page({
   data: {
     isCard: false,
     hasUserInfo: false,
+    joinMsg: {}
 
   },
 
@@ -19,6 +20,8 @@ Page({
     this.setData({
       isCard: true
     })
+    wx.showLoading()
+    
   },
 
   cancelMsg(){
@@ -40,6 +43,12 @@ Page({
       let data = e.detail.userInfo
       data.openId = app.globalData.openId
       this.postInfo(e.detail.userInfo)
+    } else {
+      wx.showToast({
+        title: "为了您更好的体验,请先同意授权",
+        icon: 'none',
+        duration: 2000
+      });
     }
   },
 
@@ -48,6 +57,23 @@ Page({
     Net.PostInfo(data).then(res => {
       console.log({res})
     })
+  },
+
+  //出席信息
+  postJoin(data){
+    Net.PostJoin(data).then(res => {
+      if(res && res.data){
+        wx.showToast({
+          title: res.data,
+          icon: 'none',
+          duration: 2000
+        });
+        this.setData({
+          isCard: false
+        })
+      }
+    })
+
   },
 
   formSubmit(event) {
@@ -65,17 +91,31 @@ Page({
       })
       return;
     }
-    var tel = event.detail.value.tel;
-    if (tel == '') {
+    var phone = event.detail.value.tel || '';
+    if (phone == '') {
       wx.showToast({
-        title: '请填写您的电话',
+        title: '请填写您的手机号码',
         icon: 'none'
       })
       return;
     }
 
-    var plan = event.detail.value.plan;
-    var extra = event.detail.value.extra;
+    if (phone.length < 11) {
+      wx.showToast({
+        title: '请填写正确手机号码',
+        icon: 'none'
+      })
+      return;
+    }
+
+    var msg = event.detail.value.plan;
+    var remark = event.detail.value.extra;
+    let openId = app.globalData.openId
+    let data = {
+      name,phone,msg,remark,openId
+    }
+    this.postJoin(data)
+
 
   },
 
@@ -89,6 +129,14 @@ Page({
         hasUserInfo: true
       })
     }
+
+    wx.showLoading()
+    Net.GetJoinMsg(app.globalData.openId).then(res => {
+      this.setData({
+        joinMsg: res.data
+      })
+
+    })
   },
 
   /**
