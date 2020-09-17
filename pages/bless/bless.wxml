@@ -2,8 +2,9 @@
 <view class="container">
 
 	<view class="flex-column" hidden='{{isCard}}'>
-		<text class="left-20 top-20">啊啊啊啊啊</text>
-		<text class="left-20 top-5" space='emsp'>  啊啊啊</text>
+		<text class="left-20 top-20">尊敬的各位宾客：</text>
+		<text class="left-20 top-5" space='emsp'>  在国家有关政策的号召和鼓舞下，在社会各界的关注下，随着恋爱的不断发展，为了高举婚姻是爱情的归属的旗帜，打击认为婚姻是爱情的坟墓之反动分子。</text>
+		<text class="left-20 top-5" space='emsp'>  从今以后，二人世界共同创造，小小家庭夫妻同欢笑。为了祝贺新的开始，特准备美酒佳肴，请各位亲朋好友做个见证。一定要到！</text>
 		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
 			我要出席
 		</button>
