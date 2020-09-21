@@ -11,6 +11,7 @@
   <block wx:for='{{typeList}}' wx:key='id'>
     <view class="img-v flex-column ripple {{item.anim}}" bindtap="toDetail" data-id="{{item.id}}">
       <image class="img" src="{{item.img}}" mode="widthFix" />
+      <text class="size-16 color-fff m-txt">查看更多</text>
       <view class="flex-row flex-ai flex-jc top-5 bottom-5" wx:if='{{item.desc}}'>
         <text>{{item.desc}}</text>
       </view>

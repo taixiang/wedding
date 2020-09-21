@@ -27,6 +27,19 @@ Page({
    */
   onLoad: function (options) {
 
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+        
+    backgroundAudioManager.title = '此时此刻'
+    backgroundAudioManager.epname = '此时此刻'
+    backgroundAudioManager.singer = '周杰伦'
+    backgroundAudioManager.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
+    // 设置了 src 之后会自动播放
+    backgroundAudioManager.src = 'https://7765-wedding-i9l06-1303164777.tcb.qcloud.la/gbqq.mp3?sign=a40b6b3a242d1e384f7c8ca6300952b6&t=1600699294'
+
+    backgroundAudioManager.onError(res1 => {
+      console.log({res1})
+    })
+
     wx.showLoading()
     let screenHeight = wx.getSystemInfoSync().screenHeight;
     //创建动画
@@ -108,6 +121,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      imageUrl: 'https://7765-wedding-i9l06-1303164777.tcb.qcloud.la/zhu1.jpg?sign=4496115c1ce17b097ec569d159fa08b8&t=1600005801',
+      path: '/pages/home/home'
+    }
   }
 })
