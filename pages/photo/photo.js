@@ -100,7 +100,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    Net.TypeList().then(res => {
+      if(res && res.code == 200){
+        let data = res.data || []
+        data.map((v,i) => {
+          if(i % 2 == 1){
+            v.anim = 'bounceInLeft'
+          }else {
+            v.anim = 'bounceInRight'
+          }
+          return v
+        })
+        console.log({data})
+        this.tmpData = data
+        this.setData({
+          typeList: data,
+          swing: 'swing'
+        })
+      }
+    })
   },
 
   /**

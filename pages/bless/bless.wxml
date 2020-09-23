@@ -7,17 +7,26 @@
 			<text class="top-20">尊敬的各位宾客：</text>
 			<text class="top-5" space='emsp'>  在国家有关政策的号召和鼓舞下，在社会各界的关注下，随着恋爱的不断发展，为了高举婚姻是爱情的归属的旗帜，打击认为婚姻是爱情的坟墓之反动分子。</text>
 			<text class="top-5" space='emsp'>  从今以后，二人世界共同创造，小小家庭夫妻同欢笑。为了祝贺新的开始，特准备美酒佳肴，请各位亲朋好友做个见证。一定要到！</text>
-			<text class="top-5" space='emsp'>  如有招待不周，还请海涵，毕竟没钱！</text>
-			<text class="top-25">*为方便统计，还请您填写好出席信息</text>
+			<text class="top-5" space='emsp' wx:if="{{joinMsg.name}}">  欢迎{{joinMsg.name}}{{joinMsg.msg == '自己一人' ? '出席' : '携' + joinMsg.msg}}我们的婚礼！</text>
+			<text space='emsp'>  祝您家庭幸福，生活美满！</text>
+			<text class="top-25">*为方便统计，请您填写好出席信息</text>
 		</view>
 
 		<button class="send_btn2" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">
-			{{joinMsg.name ? '修改出席信息' : '我要出席'}}
+			{{joinMsg.name ? '修改出席信息' : '邀请您出席'}}
 		</button>
 		<view class="flex-column th-v">
 			<text>*特别鸣谢：</text>
 			<text>感谢满街香蛋糕对本次婚礼的大力支持！</text>
 			<text>地址：姜堰区马厂路96号(锦都幼儿园隔壁)</text>
+			<text>电话：13952687571</text>
+		</view>
+
+		<view class="flex-column">
+			<block wx:for="{{cakeList}}" wx:key="*this">
+				<image src="{{item}}" class="img-cake top-20" mode="widthFix"/>
+			</block>
+			
 		</view>
 
 	</view>

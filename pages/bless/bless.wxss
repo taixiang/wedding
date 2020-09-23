@@ -1,4 +1,8 @@
 /* pages/bless/bless.wxss */
+.img-cake{
+  width: 100%;
+}
+
 .img-b{
   position: absolute;
   width: 100%;

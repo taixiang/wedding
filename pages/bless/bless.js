@@ -11,7 +11,8 @@ Page({
   data: {
     isCard: false,
     hasUserInfo: false,
-    joinMsg: {}
+    joinMsg: {},
+    cakeList: []
 
   },
 
@@ -45,7 +46,7 @@ Page({
       this.postInfo(e.detail.userInfo)
     } else {
       wx.showToast({
-        title: "为了您更好的体验,请先同意授权",
+        title: "请填写出席信息",
         icon: 'none',
         duration: 2000
       });
@@ -69,7 +70,8 @@ Page({
           duration: 2000
         });
         this.setData({
-          isCard: false
+          isCard: false,
+          joinMsg: data
         })
       }
     })
@@ -133,7 +135,8 @@ Page({
     wx.showLoading()
     Net.GetJoinMsg(app.globalData.openId).then(res => {
       this.setData({
-        joinMsg: res.data
+        joinMsg: res.data,
+        cakeList: res.data.cakeList
       })
 
     })
@@ -171,7 +174,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showLoading()
+    Net.GetJoinMsg(app.globalData.openId).then(res => {
+      this.setData({
+        joinMsg: res.data,
+        cakeList: res.data.cakeList
+      })
 
+    })
   },
 
   /**
