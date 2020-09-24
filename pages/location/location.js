@@ -32,7 +32,7 @@ Page({
   },
   callshe: function(event) {
     wx.makePhoneCall({
-      phoneNumber: ''
+      phoneNumber: '18861051476'
     })
   },
 
