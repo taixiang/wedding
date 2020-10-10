@@ -1,0 +1,14 @@
+/* pages/seat/seat.wxss */
+.container{
+  background-color: #fff;
+}
+
+.c-v{
+  border: 2rpx #333 solid;
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 175rpx;
+}
+.wrap{
+  flex-wrap: wrap;
+}

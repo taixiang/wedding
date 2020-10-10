@@ -96,6 +96,12 @@
           "pathName": "pages/photoDetail/photoDetail",
           "query": "id=2",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/seat/seat",
+          "pathName": "pages/seat/seat",
+          "scene": null
         }
       ]
     }

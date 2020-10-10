@@ -1,0 +1,18 @@
+<!--pages/seat/seat.wxml-->
+<view class="container">
+  <text class="left-20 top-20 bottom-20">请大家按照桌位名称入座</text>
+  <view class="flex-row wrap flex-jcsa">
+    <block wx:for="{{list}}" wx:key="title">
+      <view class="flex-column flex-jc flex-ai c-v">
+        <text class="size-14 color-t bottom-5">{{item.title}}</text>
+        <view class="flex-row flex-ai flex-jc wrap">
+          <block wx:for="{{item.name}}" wx:key="*this">
+            <text class="right-5 left-5">{{item}}</text>
+          </block>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+</view>

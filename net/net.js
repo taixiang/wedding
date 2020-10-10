@@ -1,7 +1,7 @@
 
-const BaseUrl = "http://192.168.0.102:8000/";
+// const BaseUrl = "http://192.168.0.102:8000/";
 
-// const BaseUrl = "https://www.manjiexiang.cn/";
+const BaseUrl = "https://www.manjiexiang.cn/";
 
 
 const request = (url, method, token, data) => {
@@ -78,5 +78,8 @@ module.exports = {
   },
   GetJoinMsg: (id) => {
     return request('blog/getJoinMsg?openId=' + id, 'get', false)
+  },
+  GetSeat: () => {
+    return request('blog/getSeat', 'get', false)
   }
 }
